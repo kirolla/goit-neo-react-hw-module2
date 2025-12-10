@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #ddd;
+}
+
+.reset {
+  background: #eee;
+}
+
+.reset:hover {
+  background: #ddd;
+}
