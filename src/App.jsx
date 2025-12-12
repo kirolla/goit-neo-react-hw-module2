@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react';
 import Feedback from './components/Feedback/Feedback.jsx';
 import Options from './components/Options/Options.jsx';
 import Notification from './components/Notification/Notification.jsx';
+import Description from './components/Description/Description.jsx';
 
 export default function App() {
   const STORAGE_KEY = 'feedbackData';
 
-  const [feedback, setFeedback] = useState(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : { good: 0, neutral: 0, bad: 0 };
-  });
+  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
 
   const { good, neutral, bad } = feedback;
 
@@ -32,7 +30,8 @@ export default function App() {
   return (
     <div>
       <h1>Sip Happens Café</h1>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
+
+      <Description text="Please leave your feedback about our service by selecting one of the options below." />
 
       <Options
         onLeaveFeedback={updateFeedback}
